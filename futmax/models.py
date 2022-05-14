@@ -10,7 +10,7 @@ class FutUpload(models.Model):
         ('INTERMEDIATE', 'INTERMEDIATE'),
         ('STARTUP', 'STARTUP'),
         ('SUPREME', 'STARTUP'),
-        ]
+    ]
     payment_method = [
         ('Monthly', 'Monthly'),
         ('Yearly', 'Yearly'),
@@ -26,7 +26,7 @@ class FutUpload(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
-    slug = models.SlugField(max_length=255, unique=True , blank=True, null=True)
+    slug = models.SlugField(max_length=255, unique=True, blank=True, null=True)
     images = models.ImageField(upload_to='futimages/')
     price = models.CharField(max_length=12, choices=plans_choices, default='BASIC')
     payment = models.CharField(max_length=7, choices=payment_method, default='MONTHLY')
@@ -53,4 +53,10 @@ class FutUpload(models.Model):
         super().save(*args, **kwargs)
 
 
+class Contact(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    message = models.TextField(max_length=255)
 
+    def __str__(self):
+        return self.name
