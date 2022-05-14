@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}
+Catalogue
+{% endblock %}
+{% block main %}
+    <br>
+    <br>
+    <div class="row">
+    {% for fut in futs %}
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <figure class="snip1527">
+        <div class="image"><img src="{{ fut.images.url }}"
+            alt="pr-sample25" /></div>
+        <figcaption>
+          <div class="date">
+              <span class="day">{{ fut.created_at|date:'d' }}</span>
+              <span class="month">{{ fut.created_at|date:'M' }}</span>
+          </div>
+
+        </figcaption>
+        <a href="{% url 'detail' fut.slug %}"></a>
+      </figure>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

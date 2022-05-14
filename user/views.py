@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from user.forms import LoginForm
 
+
 # Create your views here.
 
 
@@ -15,7 +16,7 @@ def user_login(request):
             password = cd['password']
             user = authenticate(request, username=username, password=password)
             if user is not None:
-                login(request.POST)
+                login(request, user)
                 messages.success(request, 'Bienvenue' + ' ' + request.user.username)
                 return redirect('home')
             else:
@@ -28,6 +29,7 @@ def user_login(request):
         form = LoginForm
         cx = {'form': form}
         return render(request, 'user/login.html', cx)
+
 
 def user_logout(request):
     logout(request)
