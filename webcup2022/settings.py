@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     'pwa',
+    'embed_video',
 ]
 SITE_ID = 1
 
@@ -141,7 +142,7 @@ USE_TZ = True
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    STATIC_DIR
+    STATIC_DIR,
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
