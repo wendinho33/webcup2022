@@ -9,7 +9,7 @@ class FutUpload(models.Model):
         ('BASIC', 'BASIC'),
         ('INTERMEDIATE', 'INTERMEDIATE'),
         ('STARTUP', 'STARTUP'),
-        ('SUPREME', 'STARTUP'),
+        ('SUPREME', 'SUPREME'),
     ]
     payment_method = [
         ('Monthly', 'Monthly'),
