@@ -25,3 +25,7 @@ urlpatterns = [
     path('', include('pwa.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+admin.site.site_header = "FUTMAX Admin"
+admin.site.site_title = "FUTMAX Admin Portal"
+admin.site.index_title = "BIENVENUE SUR FUTMAX PORTAIL"
