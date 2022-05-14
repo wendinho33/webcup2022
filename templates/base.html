@@ -23,6 +23,10 @@
 
 {% include 'header.html' %}
 
+{% for message in messages %}
+<script>toastr.{{ message.tags }}('{{ message|capfirst }}')</script>
+{% endfor %}
+
 
 
 
