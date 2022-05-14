@@ -16,6 +16,7 @@ def pricing(request):
 
 
 class FutCreateView(CreateView, LoginRequiredMixin):
+    login_url = 'login'
     form_class = FutForm
     template_name = 'futmax/create.html'
     success_url = 'thank_you'
