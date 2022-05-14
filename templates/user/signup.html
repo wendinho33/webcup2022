@@ -2,32 +2,32 @@
 {% load socialaccount %}
 {% providers_media_js %}
 {% block title %}
-login
+Enregistrez Vous
 {% endblock %}
 {% block main %}
-<div class="container">
+ <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9 col-lg-12 col-xl-10">
                 <div class="card shadow-lg o-hidden border-0 my-5">
                     <div class="card-body p-0">
                         <div class="row">
                             <div class="col-lg-6 d-none d-lg-flex">
-                                <div class="flex-grow-1 bg-login-image" style="background-image: url(/static/img/logo/login.png);"></div>
+                                <div class="flex-grow-1 bg-login-image" style="background-image: url(/static/img/logo/sign.png);"></div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h4 class="text-dark mb-4">Bienvenue Sur FUTMAX</h4>
+                                        <h4 class="text-dark mb-4">Enregistrez Vous Sur FUTMAX</h4>
                                     </div>
                                     <form class="user" method="post">
                                         <div class="mb-3">{% include 'form.html' %}</div>
                                         <div class="mb-3">
-                                        </div><button class="btn btn-primary d-block btn-user w-100" type="submit">Login</button>
+                                        </div><button class="btn btn-primary d-block btn-user w-100" type="submit">Register</button>
                                         <hr><a class="btn btn-primary d-block btn-google btn-user w-100 mb-2" role="button"><i class="fab fa-google"></i>&nbsp; Login with Google</a><a href="{% provider_login_url "facebook" method="js_sdk" %}" class="btn btn-primary d-block btn-facebook btn-user w-100" role="button"><i class="fab fa-facebook-f"></i>&nbsp; Login with Facebook</a>
                                         <hr>
                                     </form>
                                     <div class="text-center"><a class="small" href="forgot-password.html">Forgot Password?</a></div>
-                                    <div class="text-center"><a class="small" href="{% url 'signup' %}">Create an Account!</a></div>
+                                    <div class="text-center"><a class="small" href="{% url 'login' %}">Login</a></div>
                                 </div>
                             </div>
                         </div>
@@ -36,16 +36,27 @@ login
             </div>
         </div>
     </div>
-        <style>
-            .textInput {
+    <style>
+    #hint_id_username{
+        display: none;
+    }
+      #hint_id_password1{
+        display: none;
+    }
+    #id_password2{
             font-size: .8rem;
             border-radius: 10rem;
             padding: 0.75rem 1rem;
-            }
-
-            nav{
-                display: none;
-            }
-
+    }
+    #id_password1{
+            font-size: .8rem;
+            border-radius: 10rem;
+            padding: 0.75rem 1rem;
+    }
+    #id_username{
+            font-size: .8rem;
+            border-radius: 10rem;
+            padding: 0.75rem 1rem;
+    }
     </style>
 {% endblock %}

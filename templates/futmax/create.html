@@ -17,7 +17,7 @@ Passez votre commande
                                     <div class="text-center">
                                         <h4 class="text-dark mb-4">Passez votre commande</h4>
                                     </div>
-                                    <form class="user" method="post">
+                                    <form class="user" method="post" enctype="multipart/form-data">
                                         <div class="mb-3">{% include 'form.html' %}</div>
                                         <div class="mb-3">
                                         </div><button class="btn btn-primary d-block btn-user w-100" type="submit">Passez la commande <Commande></Commande></button>
@@ -49,6 +49,11 @@ Passez votre commande
                 padding: 0.75rem 1rem;
             }
            #id_video{
+                        font-size: .8rem;
+                        border-radius: 10rem;
+                        padding: 0.75rem 1rem;
+                    }
+            #id_images{
                         font-size: .8rem;
                         border-radius: 10rem;
                         padding: 0.75rem 1rem;
