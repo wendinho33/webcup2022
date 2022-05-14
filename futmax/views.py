@@ -38,8 +38,7 @@ class FutListView(LoginRequiredMixin, ListView):
     model = FutUpload
     template_name = 'futmax/list.html'
     queryset = FutUpload.objects.all()
-    context_object_name = 'futs'
-    redirect_field_name = '/catalog/'
+
 
 class FutDetailView(LoginRequiredMixin, DetailView):
     login_url = '/user/'

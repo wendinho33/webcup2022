@@ -23,14 +23,26 @@
 
 {% include 'header.html' %}
 
-{% for message in messages %}
-<script>toastr.{{ message.tags }}('{{ message|capfirst }}')</script>
-{% endfor %}
+
 
 
 
 
 {% block main %}
+
+
+ {% for message in messages %}
+    <script>
+        swal.fire({
+            position: 'top-end',
+            icon: '{{ message.tags }}',
+            title: '{{ message|upper }}',
+            showConfirmButton: false,
+            timer: 3000
+        })
+    </script>
+{% endfor %}
+
 
 {% endblock %}
 {% include 'js.html' %}
