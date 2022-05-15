@@ -24,11 +24,12 @@ class ThankView(LoginRequiredMixin, TemplateView):
     template_name = 'futmax/thank.html'
 
 
-class FutCreateView(LoginRequiredMixin, CreateView):
+class FutCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     login_url = '/user/'
     form_class = FutForm
     template_name = 'futmax/create.html'
     success_url = reverse_lazy('thank_you')
+    success_message = 'LE LIEN DE PAIEMENT VOUS SERA ENVOYEZ DANS VOTRE MAIL'
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -40,6 +41,7 @@ class FutListView(LoginRequiredMixin, ListView):
     model = FutUpload
     template_name = 'futmax/list.html'
     queryset = FutUpload.objects.all()
+    context_object_name = 'futs'
 
 
 class FutDetailView(LoginRequiredMixin, DetailView):
@@ -50,7 +52,7 @@ class FutDetailView(LoginRequiredMixin, DetailView):
     context_object_name = 'fut'
 
 
-class ContactView(SuccessMessageMixin,CreateView):
+class ContactView(SuccessMessageMixin, CreateView):
     model = ContactForm
     form_class = ContactForm
     template_name = 'futmax/contact.html'

@@ -18,13 +18,13 @@
         {% endblock %}
     </title>
     {% include 'css.html' %}
-{% include 'js.html' %}
+    <script src="{% static 'js/sweetalert2.min.js'%}"></script>
 </head>
 <body>
 
-{% if request.user.is_authenticated %}
+
     {% include 'header.html' %}
-{% endif %}
+
 
 {% include 'message.html' %}
 
@@ -38,7 +38,7 @@
 
 
 {% endblock %}
-
+{% include 'js.html' %}
 {% include 'footer.html' %}
 </body>
 </html>

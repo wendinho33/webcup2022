@@ -5,23 +5,25 @@ Catalogue
 {% block main %}
     <br>
     <br>
-    <div class="row">
-    {% for fut in futs %}
-    <div class="col-md-6 col-lg-4 col-xl-3">
-      <figure class="snip1527">
-        <div class="image"><img src="{{ fut.images.url }}"
-            alt="pr-sample25" /></div>
-        <figcaption>
-          <div class="date">
-              <span class="day">{{ fut.created_at|date:'d' }}</span>
-              <span class="month">{{ fut.created_at|date:'M' }}</span>
-          </div>
+<div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+{% for fut in futs %}
+ <div class="col">
+        <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;" src="{{ fut.images.url }}" />
+            <div class="card-body p-4">
+                <p class="text-primary card-text mb-0">{{ fut.title }}</p>
+                <h4 class="card-title">{{ fut.plans_choices.index}}</h4>
+                <p class="card-text"> uploaded on {{ fut.created_at|date:'d' }} {{ fut.created_at|date:'M' }} {{ fut.created_at|date:'Y' }}</p>
+                <div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" />
+                    <div>
+                        <p class="fw-bold mb-0">{{ fut.user }}</p>
 
-        </figcaption>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-      </figure>
     </div>
-  {% endfor %}
+{% endfor %}
 </div>
 
 {% endblock %}
