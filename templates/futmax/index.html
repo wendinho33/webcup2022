@@ -9,7 +9,7 @@ Acceuil
         <div class="container">
             <div class="intro-text">
                 <div class="intro-lead-in"><span class="wobble animated" style="color: rgb(14,242,215);font-size: 64px;">FUTMAX</span></div>
-                <div class="intro-heading text-uppercase"><span class="rubberBand animated infinite" style="color: rgb(142,23,198);">DECIDEZ MAINTENANT DE VIVRE AUTREMENT</span></div><a class="btn btn-primary btn-xl text-uppercase" role="button" href="{% url 'login' %}">demarrez</a>
+                <div class="intro-heading text-uppercase"><span class="rubberBand animated infinite" style="color: #ED156D;">DECIDEZ MAINTENANT DE VIVRE AUTREMENT</span></div><a class="btn btn-primary btn-xl text-uppercase" role="button" href="{% url 'login' %}">demarrez</a>
             </div>
         </div>
     </header>
@@ -220,6 +220,7 @@ Acceuil
                                 <a href="{% url 'contact' %}" class="btn btn-primary btn-xl text-uppercase">send message</a>
             </div>
         </div>
+        </div>
     </section>
     <footer>
         <div class="container">
@@ -292,12 +293,12 @@ Acceuil
                     <div class="row">
                         <div class="col-lg-8 mx-auto">
                             <div class="modal-body">
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="text-muted item-intro">Lorem ipsum dolor sit amet consectetur.</p><img class="img-fluid d-block mx-auto" src="{% static '/img/portfolio/3-full.jpg' %}">
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                <h2 class="text-uppercase">L'artisanat</h2>
+                                <p class="text-muted item-intro">L'artisanat et la Technologie</p><img class="img-fluid d-block mx-auto" src="{% static '/img/portfolio/3-full.jpg' %}">
+                                <p>Comme les artisans ont des idées mais qu’ils rencontrent des difficultés pour les traduire en produits commercialisables, l’article entend repérer, chez ceux d’entre eux qui sont réputés pour leurs capacités d’innovation, les mobiles qui les poussent à dépasser les activités routinières pour explorer des activités nouvelles et les points d’appui qu’ils utilisent, dans leur environnement proche, pour construire des trajectoires d’innovation dont ils seront, en retour, les premiers bénéficiaires. Les effets de la proximité sur l’artisan innovateur seront étudiés </p>
                                 <ul class="list-unstyled">
-                                    <li>Date: January 2017</li>
-                                    <li>Client: Threads</li>
+                                    <li>Date: Jan 2022</li>
+                                    <li>Client: Sandro</li>
                                     <li>Category: Illustration</li>
                                 </ul><button class="btn btn-primary" type="button" data-bs-dismiss="modal"><i class="fa fa-times"></i><span>&nbsp;Close Project</span></button>
                             </div>
@@ -373,4 +374,26 @@ Acceuil
             </div>
         </div>
     </div>
+    <style>
+#portfolio .portfolio-item .portfolio-link .portfolio-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all ease .5s;
+    opacity: 0;
+    background: #ED156D;
+}
+.btn-primary {
+    color: #fff;
+    background-color:  #ED156D;
+    border-color: #fed136;
+}
+.fa-inverse {
+    color: #ED156D;
+}
+
+.timeline>li .timeline-image {
+    background-color: #ED156D;
+}
+    </style>
 {% endblock %}
