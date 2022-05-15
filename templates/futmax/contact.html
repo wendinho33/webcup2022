@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Enregistrez Vous
+{% endblock %}
+{% block main %}
+ <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-9 col-lg-12 col-xl-10">
+                <div class="card shadow-lg o-hidden border-0 my-5">
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-flex">
+                                <div class="flex-grow-1 bg-login-image" style="background-image: url(/static/img/logo/sign.png);"></div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h4 class="text-dark mb-4">Laissez</h4>
+                                    </div>
+                                    <form class="user" method="post">
+                                        <div class="mb-3">{% include 'form.html' %}</div>
+                                        <div class="mb-3">
+                                        </div><button class="btn btn-primary d-block btn-user w-100" type="submit">SEND MESSAGE</button>
+
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+    #hint_id_username{
+        display: none;
+    }
+      #hint_id_password1{
+        display: none;
+    }
+    #id_email{
+            font-size: .8rem;
+            border-radius: 10rem;
+            padding: 0.75rem 1rem;
+    }
+    #id_name{
+            font-size: .8rem;
+            border-radius: 10rem;
+            padding: 0.75rem 1rem;
+    }
+
+    </style>
+{% endblock %}

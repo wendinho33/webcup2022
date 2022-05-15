@@ -18,12 +18,15 @@
         {% endblock %}
     </title>
     {% include 'css.html' %}
+{% include 'js.html' %}
 </head>
 <body>
 
-{% include 'header.html' %}
+{% if request.user.is_authenticated %}
+    {% include 'header.html' %}
+{% endif %}
 
-
+{% include 'message.html' %}
 
 
 
@@ -31,21 +34,11 @@
 {% block main %}
 
 
- {% for message in messages %}
-    <script>
-        swal.fire({
-            position: 'top-end',
-            icon: '{{ message.tags }}',
-            title: '{{ message|upper }}',
-            showConfirmButton: false,
-            timer: 3000
-        })
-    </script>
-{% endfor %}
+
 
 
 {% endblock %}
-{% include 'js.html' %}
+
 {% include 'footer.html' %}
 </body>
 </html>

@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import CreateView, ListView, TemplateView, DetailView
-from futmax.models import FutUpload
-from futmax.forms import FutForm
+from futmax.models import FutUpload, Contact
+from futmax.forms import FutForm, ContactForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
+
 
 from django.urls import reverse_lazy
 
@@ -46,3 +48,11 @@ class FutDetailView(LoginRequiredMixin, DetailView):
     template_name = 'futmax/detail.html'
     queryset = FutUpload.objects.all()
     context_object_name = 'fut'
+
+
+class ContactView(SuccessMessageMixin,CreateView):
+    model = ContactForm
+    form_class = ContactForm
+    template_name = 'futmax/contact.html'
+    success_url = reverse_lazy('home')
+    success_message = 'MAIL ENVOYEZ, FUTMAX VAS REVENIR VERS VOUS'
